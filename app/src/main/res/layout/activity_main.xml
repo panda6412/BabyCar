@@ -7,7 +7,7 @@
     android:orientation="vertical"
     tools:context="com.ocean.babycar.MainActivity">
 
-    <com.ocean.babycar.SlidingTabLayout
+    <com.ocean.babycar.Sliding_Tab.SlidingTabLayout
         android:id="@+id/tabs"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

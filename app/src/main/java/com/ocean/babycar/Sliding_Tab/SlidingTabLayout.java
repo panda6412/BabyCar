@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.ocean.babycar;
+package com.ocean.babycar.Sliding_Tab;
 
 import android.content.Context;
 import android.graphics.Typeface;
@@ -28,8 +28,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.HorizontalScrollView;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.ocean.babycar.R;
 
 /**
  * To be used with ViewPager to provide a tab indicator component which give constant feedback as to
@@ -48,6 +51,9 @@ import android.widget.TextView;
  * providing the layout ID of your custom layout.
  */
 public class SlidingTabLayout extends HorizontalScrollView {
+
+    private ImageView tabImageView;
+
     /**
      * Allows complete control over the colors drawn in the tab layout. Set with
      * {@link #setCustomTabColorizer(TabColorizer)}.
@@ -69,6 +75,7 @@ public class SlidingTabLayout extends HorizontalScrollView {
 
     private int mTabViewLayoutId;
     private int mTabViewTextViewId;
+    private Integer[] mIconResourceArray;
     private boolean mDistributeEvenly;
 
     private ViewPager mViewPager;
@@ -192,9 +199,13 @@ public class SlidingTabLayout extends HorizontalScrollView {
 
             if (mTabViewLayoutId != 0) {
                 // If there is a custom tab view layout id set, try and inflate it
-                tabView = LayoutInflater.from(getContext()).inflate(mTabViewLayoutId, mTabStrip,
+                tabView = LayoutInflater.from(getContext()).inflate(R.layout.tab_row, mTabStrip,
                         false);
-                tabTitleView = (TextView) tabView.findViewById(mTabViewTextViewId);
+                tabTitleView = (TextView) tabView.findViewById(R.id.tab_tv_text);
+
+                tabImageView = (ImageView) tabView.findViewById(R.id.tab_iv_icon);
+                tabImageView.setImageDrawable(getContext().getDrawable(getIconResourceArray()[i]));
+
             }
 
             if (tabView == null) {
@@ -318,4 +329,12 @@ public class SlidingTabLayout extends HorizontalScrollView {
         }
     }
 
+
+    public Integer[] getIconResourceArray() {
+        return mIconResourceArray;
+    }
+
+    public void setIconResourceArray(Integer[] mIconResourceArray) {
+        this.mIconResourceArray = mIconResourceArray;
+    }
 }

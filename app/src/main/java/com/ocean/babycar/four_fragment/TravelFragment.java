@@ -1,4 +1,4 @@
-package com.ocean.babycar;
+package com.ocean.babycar.four_fragment;
 
 
 import android.os.Bundle;
@@ -7,13 +7,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.ocean.babycar.R;
+
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link BabyCarFragment#newInstance} factory method to
+ * Use the {@link TravelFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class BabyCarFragment extends Fragment {
+public class TravelFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -24,7 +26,7 @@ public class BabyCarFragment extends Fragment {
     private String mParam2;
 
 
-    public BabyCarFragment() {
+    public TravelFragment() {
         // Required empty public constructor
     }
 
@@ -34,11 +36,11 @@ public class BabyCarFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment BabyCarFragment.
+     * @return A new instance of fragment TravelFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static BabyCarFragment newInstance(String param1, String param2) {
-        BabyCarFragment fragment = new BabyCarFragment();
+    public static TravelFragment newInstance(String param1, String param2) {
+        TravelFragment fragment = new TravelFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -59,7 +61,7 @@ public class BabyCarFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_baby_car, container, false);
+        return inflater.inflate(R.layout.fragment_travel, container, false);
     }
 
 }

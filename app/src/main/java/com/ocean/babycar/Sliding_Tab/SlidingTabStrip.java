@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.ocean.babycar;
+package com.ocean.babycar.Sliding_Tab;
 
 import android.content.Context;
 import android.graphics.Canvas;

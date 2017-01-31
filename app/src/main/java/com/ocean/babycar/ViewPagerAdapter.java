@@ -4,6 +4,11 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
+import com.ocean.babycar.four_fragment.AirportFragment;
+import com.ocean.babycar.four_fragment.BabyCarFragment;
+import com.ocean.babycar.four_fragment.HomeFragment;
+import com.ocean.babycar.four_fragment.TravelFragment;
+
 /**
  * Created by liuyouyang on 2017/1/26.
  */
@@ -13,6 +18,7 @@ public class ViewPagerAdapter extends FragmentStatePagerAdapter {
     CharSequence Titles[]; // This will Store the Titles of the Tabs which are Going to be passed when ViewPagerAdapter is created
     int NumbOfTabs; // Store the number of tabs, this will also be passed when the ViewPagerAdapter is created
 
+    int [] drawableResId = {android.R.drawable.ic_btn_speak_now,android.R.drawable.ic_delete,android.R.drawable.ic_input_add,android.R.drawable.ic_dialog_map};
     public ViewPagerAdapter(FragmentManager fm,CharSequence mTitles[], int mNumbOfTabsumb) {
         super(fm);
         this.Titles = mTitles;
@@ -46,7 +52,12 @@ public class ViewPagerAdapter extends FragmentStatePagerAdapter {
 
     @Override
     public CharSequence getPageTitle(int position) {
+
         return Titles[position];
+    }
+
+    public int[] getDrawable(){
+        return drawableResId;
     }
 
     @Override
