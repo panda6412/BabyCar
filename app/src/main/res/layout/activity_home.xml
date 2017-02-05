@@ -57,6 +57,16 @@
             android:layout_alignParentEnd="true"
             android:layout_marginRight="15dp"
             android:layout_marginTop="15dp" />
+
+        <Button
+            android:text="叫車紀錄"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/imageView"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="13dp"
+            android:id="@+id/btn_record" />
     </RelativeLayout>
 
     <LinearLayout
@@ -74,7 +84,7 @@
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="140dp"
-                android:id="@+id/button"
+                android:id="@+id/btn_babycart_reservation"
                 android:background="@drawable/ani_babycart"
                 android:text="汽座預約"
                 android:textSize="50sp"
@@ -89,7 +99,7 @@
             <Button
                 android:text="機場接送"
                 android:layout_width="match_parent"
-                android:id="@+id/button2"
+                android:id="@+id/btn_airport_carry"
                 android:layout_height="140dp"
                 android:drawableRight="@drawable/ic_right_"
                 android:background="@drawable/ani_airport_carry"
@@ -113,7 +123,7 @@
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="140dp"
-                android:id="@+id/imageButton2"
+                android:id="@+id/btn_driver_login"
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentStart="true"
                 android:text="司機登入"
