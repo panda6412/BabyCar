@@ -5,9 +5,190 @@
     tools:context="com.ocean.babycar.PassengerFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:weightSum="1">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/shape2"
+            android:layout_height="260dp">
+
+            <TextView
+                android:text="一般"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView2"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp" />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/shape"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="7dp">
+
+                <Button
+                    android:layout_height="wrap_content"
+                    android:id="@+id/btn_adult_minus"
+                    android:layout_width="50dp"
+                    android:background="@drawable/ic_minus_"
+                    android:gravity="center" />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:inputType="number"
+                    android:ems="10"
+                    android:layout_centerInParent="true"
+                    android:ellipsize="start"
+                    android:gravity="center_horizontal"
+                    android:id="@+id/ed_adult"
+                    android:layout_weight="0.82"
+                    android:hint="0"
+                    android:layout_marginTop="2dp" />
+
+                <Button
+                    android:layout_height="wrap_content"
+                    android:id="@+id/btn_adult_plus"
+                    android:layout_width="51dp"
+                    android:background="@drawable/ic_plus_"
+                    android:gravity="center" />
+            </LinearLayout>
+
+            <TextView
+                android:text="4歲以下孩童"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView3"
+                android:layout_marginLeft="5dp" />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/shape"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="7dp">
+
+                <Button
+                    android:layout_height="wrap_content"
+                    android:id="@+id/btn_children_minus"
+                    android:layout_width="50dp"
+                    android:background="@drawable/ic_minus_"
+                    android:gravity="center" />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:inputType="number"
+                    android:ems="10"
+                    android:layout_centerInParent="true"
+                    android:ellipsize="start"
+                    android:gravity="center_horizontal"
+                    android:id="@+id/ed_children"
+                    android:layout_weight="0.82"
+                    android:hint="0"
+                    android:layout_marginTop="2dp" />
+
+                <Button
+                    android:layout_height="wrap_content"
+                    android:id="@+id/btn_children_plus"
+                    android:layout_width="51dp"
+                    android:background="@drawable/ic_plus_"
+                    android:gravity="center"
+                    android:layout_marginRight="1dp" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="35dp"
+                android:background="#F3F9FF">
+
+                <TextView
+                    android:text="人數：0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="10dp"
+                    android:id="@+id/tv_total_passenger" />
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="7dp">
+
+            <TextView
+                android:text="行李件數"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView7"
+                android:layout_marginLeft="5dp" />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/shape"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="7dp">
+
+                <Button
+                    android:layout_height="wrap_content"
+                    android:id="@+id/btn_lagguage_minus"
+                    android:layout_width="50dp"
+                    android:background="@drawable/ic_minus_"
+                    android:gravity="center" />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:inputType="number"
+                    android:ems="10"
+                    android:layout_centerInParent="true"
+                    android:ellipsize="start"
+                    android:gravity="center_horizontal"
+                    android:id="@+id/ed_lagguage"
+                    android:layout_weight="0.82"
+                    android:hint="0"
+                    android:layout_marginTop="2dp" />
+
+                <Button
+                    android:layout_height="wrap_content"
+                    android:id="@+id/btn_lagguage_plus"
+                    android:layout_width="51dp"
+                    android:background="@drawable/ic_plus_"
+                    android:gravity="center"
+                    android:layout_marginRight="1dp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <Button
+            android:text="下一步：選擇地點"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_select_location"
+            android:layout_marginTop="150dp"
+            android:layout_weight="0.10" />
+
+    </LinearLayout>
 
 </FrameLayout>

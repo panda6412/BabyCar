@@ -16,15 +16,19 @@ public class BabyCartReservationActivity extends AppCompatActivity {
         initToolBar();
 
 
+
+
     }
 
     private void initToolBar() {
         Toolbar toolbar = (Toolbar)findViewById(R.id.id_toolbar);
 
+        //Add toolbar
         setSupportActionBar(toolbar);
         TextView tv_toolbar_title = (TextView)toolbar.findViewById(R.id.tv_toolbar_title);
-        getSupportActionBar().setDisplayShowTitleEnabled(false);
 
+        //Hide ActionBar
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
 
         tv_toolbar_title.setText("搭乘人數");
     }
