@@ -4,6 +4,7 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -83,6 +84,7 @@ public class PassengerFragment extends Fragment {
     private void findViewById() {
 
         ed_children = (EditText)view.findViewById(R.id.ed_children);
+        ed_adult = (EditText)view.findViewById(R.id.ed_adult);
         ed_lagguage = (EditText)view.findViewById(R.id.ed_lagguage);
         btn_adult_plus = (Button)view.findViewById(R.id.btn_adult_plus);
         btn_adult_minus = (Button)view.findViewById(R.id.btn_adult_minus);
@@ -100,7 +102,8 @@ public class PassengerFragment extends Fragment {
             switch(id){
                 case R.id.btn_adult_plus:
                     adult++;
-                    ed_adult.setHint(adult);
+                    Log.d("ed_adult value",ed_adult.getText().toString());
+                    //ed_adult.setHint(adult);
                     break;
                 case R.id.btn_adult_minus:
                     adult--;
