@@ -10,7 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-
+import android.widget.TextView;
 
 
 public class PassengerFragment extends Fragment {
@@ -22,6 +22,7 @@ public class PassengerFragment extends Fragment {
     public int adult = 0 ;
     public int children = 0 ;
     public int luggage = 0 ;
+
 
     private View view ;
 
@@ -38,6 +39,7 @@ public class PassengerFragment extends Fragment {
     private Button btn_children_minus;
     private Button btn_lagguage_plus;
     private Button btn_lagguage_minus;
+    private TextView tv_total_passenger;
 
     public PassengerFragment() {
         // Required empty public constructor
@@ -86,6 +88,7 @@ public class PassengerFragment extends Fragment {
         ed_children = (EditText)view.findViewById(R.id.ed_children);
         ed_adult = (EditText)view.findViewById(R.id.ed_adult);
         ed_lagguage = (EditText)view.findViewById(R.id.ed_lagguage);
+        tv_total_passenger = (TextView)view.findViewById(R.id.tv_total_passenger);
         btn_adult_plus = (Button)view.findViewById(R.id.btn_adult_plus);
         btn_adult_minus = (Button)view.findViewById(R.id.btn_adult_minus);
         btn_children_plus = (Button)view.findViewById(R.id.btn_children_plus);
@@ -95,45 +98,44 @@ public class PassengerFragment extends Fragment {
     }
 
     class onClicks implements View.OnClickListener{
-
         @Override
         public void onClick(View v) {
             int id = v.getId();
             switch(id){
                 case R.id.btn_adult_plus:
                     adult++;
-                    Log.d("ed_adult value",ed_adult.getText().toString());
-                    //ed_adult.setHint(adult);
+                    ed_adult.setText(adult+"");
                     break;
                 case R.id.btn_adult_minus:
-                    adult--;
-                    ed_adult.setHint(adult);
+                    if(adult>0)
+                        adult--;
+                    ed_adult.setText(adult+"");
                     break;
                 case R.id.btn_children_plus:
                     children++;
-                    ed_children.setHint(children);
+                    ed_children.setText(children+"");
                     break;
                 case R.id.btn_children_minus:
+                    if(children>0)
                     children--;
-                    ed_children.setHint(children);
+                    ed_children.setText(children+"");
                     break;
                 case R.id.btn_lagguage_plus:
                     luggage++;
-                    ed_lagguage.setHint(luggage);
+                    ed_lagguage.setText(luggage+"");
                     break;
                 case R.id.btn_lagguage_minus:
-                    luggage--;
-                    ed_lagguage.setHint(luggage);
+                    if(luggage>0)
+                        luggage--;
+                    ed_lagguage.setText(luggage+"");
                     break;
             }
+            tv_total_passenger.setText("人數："+(adult+children)+"");
         }
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-
-
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_passenger, container, false);
         ed_adult = (EditText)view.findViewById(R.id.ed_adult);
         findViewById();
